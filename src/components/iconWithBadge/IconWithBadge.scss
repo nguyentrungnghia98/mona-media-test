@@ -1,0 +1,29 @@
+@import '../../styles/variables';
+@import '../../styles/common';
+
+.icon-with-badge {
+  width: 36px;
+  height: 36px;
+  background-color: $secondary;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__badge {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #F5222D;
+    color: white;
+    font-size: 0.6875rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -12%;
+    left: 66%;
+    @include no-padding;
+  }
+}

@@ -1,30 +1,31 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { routes, RouteConfig } from './routesConfig';
 import Spinner from 'components/spinner/Spinner';
+import withLayout from 'components/layout/withLayout';
+import LoggedInLayout from 'components/layout/LoggedInLayout/LoggedInLayout';
 
 const Routes: React.FC = () => {
   return (
     <Router>
-      <Link to="create-tour">1</Link>
-      <Link to="manage-tour">2</Link>
-      <Link to="manage-profile">3</Link>
       <Switch>
         {routes.map((route: RouteConfig, index) => (
           <Route
             key={index}
             exact={route.exact}
             path={route.path}
-            render={() => {
+            component={withLayout(LoggedInLayout, () => {
               const Component = route.component;
               return (
                 <Suspense fallback={<Spinner />}>
                   <Component route={route} />
                 </Suspense>
               );
-            }}
+            })}
           />
         ))}
+        <Redirect from="/" exact to={routes[0].path} />
+        <Route render={() => <>404</>} />
       </Switch>
     </Router>
   );

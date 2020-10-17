@@ -1,0 +1,136 @@
+@import '../../styles/variables';
+
+@mixin nav-font {
+  font-size: .875rem;
+  line-height: .875rem;
+  font-weight: 600;
+}
+
+.navbar {
+  height: 60px;
+  padding: 0 3.75rem;
+  background: $backgroundColor;
+  box-shadow: $boxShadow;
+  .nav-item {
+    display: flex;
+    align-items: center;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    &__circles {
+      width: 40px;
+      height: 30px;
+      position: relative;
+      >div {
+        width: 21px;
+        height: 21px;
+        border-radius: 50%;
+        position: relative;
+        opacity: .9;
+      }
+      .logo-circle1 {
+        background-color: $logoCircle1;
+        position: absolute;
+        left: 0%;
+        right: 44.86%;
+        top: 0%;
+        bottom: 25%;
+      } 
+  
+      .logo-circle2 {
+        background-color: $logoCircle2;
+        position: absolute;
+        left: 27.57%;
+        right: 17.29%;
+        top: 25%;
+      }
+    }
+    &__text {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: $textColor;
+      margin-bottom: 0;
+    }
+  }
+  .nav-search {
+    margin-left: 2rem;
+    height: 38px;
+    width: 290px;
+    background-color: $secondary;
+    border-radius: 19px;
+    display: flex;
+    align-items: center;
+    @include nav-font;
+    i {
+      color: $searchBoxIconColor;
+      margin: 0 12px 0 16px;
+    }
+    input {
+      color: $searchBoxTextColor;
+      padding: 6px 0;
+    }
+  }
+  .nav-right {
+    .nav-item:not(:first-child) {
+      margin-left: 24px;
+    }
+    .nav-link {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .dropdown {
+    .dropdown-toggle {
+      &::after {
+        vertical-align: .2em;
+      }
+    }
+  }
+  a, .dropdown .dropdown-toggle {
+    color: $textColor;
+    @include nav-font;
+  }
+  
+  .nav-profile {
+    img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    span {
+      margin-right: 12px;
+    }
+  }
+}
+
+@media (max-width: 1100px) { 
+  .navbar {
+    padding: 0 2rem;
+    .nav-right {
+      .nav-item:not(:first-child) {
+        margin-left: 16px;
+      }
+    }
+    .icon-with-badge {
+      width: 30px;
+      height: 30px;
+      svg {
+        width: 17px;
+        height: 17px;
+      }
+      &__badge {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  
+}
+
+@media (max-width: 768px) { 
+  .navbar {
+    padding: 0 1rem;
+  }
+}
