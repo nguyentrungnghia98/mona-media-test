@@ -1,5 +1,6 @@
 import { DEFAULT_IMAGE } from 'constants/common';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
   Container,
@@ -14,23 +15,29 @@ import {
 import './Header.scss';
 import HeaderMessages from './headerMessages/HeaderMessages';
 import HeaderNotification from './headerNotification/HeaderNotification';
+import { toggleSidebar } from '../../store/sidebar/sidebarActions';
 
 const Header: React.FC = () => {
+  const dispatch = useDispatch();
+  const handleToggleSidebar = () => dispatch(toggleSidebar());
+
   return (
     <Navbar light expand="xs" className="navbar-multi-collapse">
       <Container className="navbar-container" fluid>
         <Nav navbar>
-          <NavItem className="d-none d-sm-block">
+          <NavItem className="d-none d-lg-block">
             <Link to="/" className="nav-logo">
               <div className="nav-logo__circles">
-                <div className="logo-circle1" />
-                <div className="logo-circle2" />
+                <div className="nav-logo__circles--circle1" />
+                <div className="nav-logo__circles--circle2" />
               </div>
               <h4 className="nav-logo__text">5starguides</h4>
             </Link>
           </NavItem>
-          <NavItem className="d-block d-sm-none">
-            <i className="fa fa-bars fa-fw" />
+          <NavItem className="d-block d-lg-none" onClick={handleToggleSidebar}>
+            <div className="nav-bar">
+              <i className="fa fa-bars fa-fw" />
+            </div>
           </NavItem>
           <NavItem className="d-none d-lg-block">
             <div className="nav-search">

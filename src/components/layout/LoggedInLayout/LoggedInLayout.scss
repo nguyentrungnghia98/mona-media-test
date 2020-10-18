@@ -1,0 +1,19 @@
+@import '../../../styles/variables';
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  &__content {
+    margin-left: $sidebarWidth;
+  }
+}
+
+@media (max-width: 992px) {
+  .wrapper {
+    &__content {
+      margin-left: 0;
+      padding: 0 10px;
+    }
+  }
+}

@@ -1,13 +1,24 @@
-$danger: red;
+$danger: #F5222D;
+$success: #2ECC71;
 $textColor: black;
 $backgroundColor: #FFFFFF;
+$backgroundBody: #E5E5E5;
 $boxShadow: inset 0px -1px 1px #EEEEEE;
 $secondary: #f5f5f5;
+$primary: #FF79A9;
+// Navbar
+$navbarHeight: 60px;
 
 // Logo
-$logoCircle1: #FF79A9;
 $logoCircle2: #1890FF;
 
 // Search box
 $searchBoxIconColor: rgba(0, 0, 0, 0.25);
 $searchBoxTextColor: rgba(0, 0, 0, 0.65);
+
+// Sidebar
+$sidebarWidth: 368px;
+$sidebarBoxShadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+$sidebarBackground: white;
+$sidebarIconBackground: #EEEEEE;
+$sidebarTextColor: #9B9B9B;

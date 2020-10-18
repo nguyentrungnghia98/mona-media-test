@@ -1,0 +1,24 @@
+
+@import '../../../styles/variables';
+
+.circle-progress {
+  height: 80px;
+  width: 80px;
+  cursor: pointer;
+  &__wrapper {
+    transform: rotate(-90deg);
+  }
+  &__back {
+    fill: none; 
+    stroke: #EEEEEE;
+    stroke-width:2px;
+  }
+  &__prog {
+    fill: none; 
+    stroke: $success;
+    stroke-width: 2px;  
+    stroke-dasharray: 0 999;    
+    stroke-dashoffset: 0px;
+    transition: stroke-dasharray 0.7s linear 0s;
+  }
+}

@@ -1,0 +1,123 @@
+@import '../../styles/variables';
+
+.left-sidebar {
+  width: $sidebarWidth;
+  height: calc(100vh - #{$navbarHeight});
+  background-color: $sidebarBackground;
+  box-shadow: $sidebarBoxShadow;
+  position: fixed;
+  padding-top: 32px;
+  .user-profile {
+    display: flex;
+    padding: 0 32px;
+    &__left {
+      position: relative;
+      width: 80px;
+      cursor: pointer;
+      margin-right: 24px;
+      .profile-avatar {
+        width: 72px;
+        height: 72px;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        border-radius: 50%;
+      }
+      .profile-upload {
+        background-color: $secondary;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 0;
+        right: 0;
+      }
+    }
+    &__welcome {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    &__description {
+      font-size: .875rem;
+      font-weight: 400;
+    }
+  }
+  .menu-items {
+    margin-top: 32px;
+    padding: 0 32px;
+    .menu-item {
+      &__title {
+        color: $sidebarTextColor;
+        font-size: .875rem;
+        margin-top: 24px;
+        margin-bottom: 8px;
+      }
+      &__content {
+        height: 48px;
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        padding: 0 16px;
+        position: relative;
+        transition: .25s background-color;
+        &:hover {
+          background-color: $secondary;
+        }
+        &:not(:hover)::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: calc(100% - 56px);
+          background-color: $sidebarIconBackground;
+          height: 1px;
+        }
+      }
+      &__icon {
+        width: 16px;
+        height: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $sidebarIconBackground;
+        border-radius: 50%;
+      }
+      &__text {
+        font-size: .875rem;
+        margin-left: 24px;
+        color: $textColor;
+        font-weight: 500;
+      }
+      &__count {
+        width: 24px;
+        height: 24px;
+        margin-left: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $sidebarIconBackground;
+        color: $sidebarTextColor;
+        border-radius: 50%;
+        &--primary {
+          background-color: $primary;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .left-sidebar {
+    display: none;
+    z-index: 9;
+    top: $navbarHeight;
+  }
+  .sidebar--enable {
+    display: block;
+  }
+}

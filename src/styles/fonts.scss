@@ -1,0 +1,53 @@
+$url-font: "/assets/fonts/";
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("#{$url-font}SF-Pro-Text-Regular.eot");
+  src:
+    url("#{$url-font}SF-Pro-Text-Regular.eot?#iefix") format("embedded-opentype"),
+    url("#{$url-font}SF-Pro-Text-Regular.woff2") format("woff2"),
+    url("#{$url-font}SF-Pro-Text-Regular.woff") format("woff"),
+    url("#{$url-font}SF-Pro-Text-Regular.ttf") format("truetype"),
+    url("#{$url-font}SF-Pro-Text-Regular.svg#SF Pro Text") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("#{$url-font}SF-Pro-Text-Medium.eot");
+  src:
+    url("#{$url-font}SF-Pro-Text-Medium.eot?#iefix") format("embedded-opentype"),
+    url("#{$url-font}SF-Pro-Text-Medium.woff2") format("woff2"),
+    url("#{$url-font}SF-Pro-Text-Medium.woff") format("woff"),
+    url("#{$url-font}SF-Pro-Text-Medium.ttf") format("truetype"),
+    url("#{$url-font}SF-Pro-Text-Medium.svg#SF Pro Text") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("#{$url-font}SF-Pro-Text-Semibold.eot");
+  src:
+    url("#{$url-font}SF-Pro-Text-Semibold.eot?#iefix") format("embedded-opentype"),
+    url("#{$url-font}SF-Pro-Text-Semibold.woff2") format("woff2"),
+    url("#{$url-font}SF-Pro-Text-Semibold.woff") format("woff"),
+    url("#{$url-font}SF-Pro-Text-Semibold.ttf") format("truetype"),
+    url("#{$url-font}SF-Pro-Text-Semibold.svg#SF Pro Text") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("#{$url-font}SF-Pro-Text-Bold.eot");
+  src:
+    url("#{$url-font}SF-Pro-Text-Bold.eot?#iefix") format("embedded-opentype"),
+    url("#{$url-font}SF-Pro-Text-Bold.woff2") format("woff2"),
+    url("#{$url-font}SF-Pro-Text-Bold.woff") format("woff"),
+    url("#{$url-font}SF-Pro-Text-Bold.ttf") format("truetype"),
+    url("#{$url-font}SF-Pro-Text-Bold.svg#SF Pro Text") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
